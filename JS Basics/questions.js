@@ -102,8 +102,8 @@ run(5);
 console.log(typeof f);
 
 // Output
-function
-//  
+"undefined" in modern strict mode (because f is block-scoped),
+"function" in non-strict mode (because the function declaration is hoisted to the outer scope).  
 
   
 // Q10
@@ -575,15 +575,27 @@ console.log(count);
 console.log(Number("10px"))
 console.log(parseInt("10px"))
 
+// Output
+NaN
+10
+// Number requires full numeric string; parseInt parses prefix digits.
+
 
 // Q52
 console.log(isNaN("foo"), Number.isNaN("foo"));
+
+// Output
+true false
+// isNaN("foo") coerces to number (NaN) → true; Number.isNaN("foo") checks type strictly → false.
 
 
 // Q53
 const a = 2, b = "3";
 console.log(`${a + b}`);
 
+// Output
+23
+// number + string concatenates into "23". 
 
 
 
@@ -596,6 +608,11 @@ a.foo = 99;
 for (const k in a)  console.log("in:", k);
 for (const v of a)  console.log("of:", v);
 
+// Output
+in: 0
+in: foo
+of: 10
+// for...in iterates keys (indices + properties); for...of iterates values.
 
 
 // Conditions
@@ -604,6 +621,16 @@ for (const v of a)  console.log("of:", v);
 const obj = { a: { b: 0 } };
 const x = obj.a?.b ?? 7;
 
+// Output
+nothing is logged in this snippet, but x is 0.
+// ?. is the optional chaining operator. It safely tries to access obj.a.b.
+  // Since obj.a exists, it proceeds. obj.a.b is 0.
+// Nullish coalescing ?? → This operator only falls back to the right-hand value if the left side is null or undefined.
+
 
 // Q56
 console.log("A" && "" || "C")
+
+// Output
+C
+// "A" && "" gives "" (falsy), so "" || "C" returns "C".
