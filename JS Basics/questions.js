@@ -9,6 +9,7 @@ ReferenceError: Cannot access 'y' before initialization
 // because let variables are in the Temporal Dead Zone before initialization.
 
 
+
 // Q2
 var a = 2;
 var a = 5;
