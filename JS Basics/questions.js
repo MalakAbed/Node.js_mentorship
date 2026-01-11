@@ -2,7 +2,7 @@
 
 // Q1
 console.log(y);
-let y = 10;
+let y = 100;
 
 
 // Output
