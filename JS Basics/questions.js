@@ -2,12 +2,11 @@
 
 // Q1
 console.log(y);
-let y = 10;
+let y = 100;
 
 // Output
 ReferenceError: Cannot access 'y' before initialization
 // because let variables are in the Temporal Dead Zone before initialization.
-
 
 
 // Q2
