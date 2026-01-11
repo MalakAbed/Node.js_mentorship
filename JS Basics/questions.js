@@ -4,6 +4,7 @@
 console.log(y);
 let y = 10;
 
+
 // Output
 ReferenceError: Cannot access 'y' before initialization
 // because let variables are in the Temporal Dead Zone before initialization.
